@@ -1,0 +1,67 @@
+@import "../css/reset.css";
+@import "../css/root.less";
+@import "../css/footer.less";
+body {
+    .padding(33, 33, 33, 33);
+}
+
+.fantSize {
+    .font-size(36) !important;
+}
+
+.topSize {
+    .top(-20) !important;
+}
+.mgt30{
+    .margin-top(30);
+}
+.mgb40{
+    .margin-bottom(40);
+}
+.text-indent{
+    text-indent: 2em;
+}
+.content {
+    img {
+        .width(686);
+        .height(454);
+        .margin-bottom(30);
+    }
+    h3 {
+        text-align: center;
+        .font-size(36);
+    }
+    .wier {
+        width: 100%;
+        .height(4);
+        .margin-top(40);
+        .margin-bottom(40);
+        background-color: #75cae5;
+        position: relative;
+        span {
+            .font-size(16);
+            color: #75cae5;
+            position: absolute;
+            .top(-15);
+            left: 50%;
+            transform: translate(-50%, 0);
+            display: inline-block;
+            .padding(0, 20, 0, 20);
+            overflow: hidden;
+            background-color: #fff;
+        }
+    }
+    p {
+        text-indent: 2em;
+        // .margin-top(40);
+        .font-size(30);
+    }
+    h5{
+        .font-size(30);
+        .margin-bottom(30);
+    }
+    h4{
+        .font-size(30);
+        font-weight: bold;
+    }
+}

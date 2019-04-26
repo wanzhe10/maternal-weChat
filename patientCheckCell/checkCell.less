@@ -1,0 +1,73 @@
+@import "../css/reset.css";
+@import "../css/root.less";
+@import "../css/footer.less";
+body {
+    background: @bgColor;
+}
+.mainContent {
+    .margin(20,20,60,20);
+    //background: @fff;
+    .firstBox {
+        background: @fff;
+        .padding(10,0,15,0);
+        //.min-height(413);
+        .titleDiv {
+            .padding(10,20,0,26);
+            .titleSpan {
+                .font-size(34);
+                color: #333;
+                text-shadow: #f00 3 3 3;
+            }
+            .titleImg {
+                .width(35);
+                .height(35);
+                .margin(-10,0,0,0);
+            }
+        }
+        .titleLine {
+            width:100%;
+            .height(2);
+        }
+        .titleDetail{
+            .padding(0,40,20,70);
+            .spanTitle {
+                display: block;
+                .font-size(34);
+                color: #a3dbee;
+            }
+            .spanTitleDetail{
+                display: block;
+                .font-size(32);
+                color: #666666;
+            }
+        }
+    }
+    .secondBox {
+        .margin(20,0,20,0);
+        //.min-height(806);
+        background: @fff;
+        .secondTitleDiv {
+            .padding(10,20,0,26);
+            .secondTitleSpan {
+                .font-size(34);
+                color: #333;
+                text-shadow: #f00 3 3 3;
+            }
+            .secondTitleImg {
+                .width(35);
+                .height(35);
+                .margin(-10,0,0,0);
+            }
+        }
+        .secondTitleDetail {
+            .padding(10,40,30,70);
+            .secondTitleSpan {
+            //.padding(10,40,10,70);
+            //display: block;
+            .font-size(32);
+            color: #666666;
+            }
+        }
+        
+    }
+}

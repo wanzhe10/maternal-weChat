@@ -1,0 +1,79 @@
+@import "../css/reset.css"; // 默认样式
+@import "../css/root.less";
+@import "../css/footer.less"; // 底部版权样式
+@import "../css/bigImg.less"; // 查看大图
+
+body {
+    background: @bgColor;
+}
+
+.container {
+    .margin(0,20,0,20);
+
+    > h2 {
+        .line-height(100);
+        .font-size(34);
+        color: @666;
+        font-weight: bold;
+    }
+
+    .itemBox {
+        .margin-top(20);
+        background: @fff;
+
+        .titleBox {
+            display: flex;
+            justify-content: space-between;
+            color: @qing;
+            .font-size(32);
+            .line-height(94);
+            background: #f6f6f6;
+
+            .month {
+                font-weight: bold;
+                .margin-right(30);
+                .margin-left(25);
+            }
+
+            .serialNum {
+                .margin-left(30);
+            }
+
+            > a {
+                .padding(0,40,0,40);
+                .font-size(32);
+                color: @qing;
+            }
+        }
+
+        .item {
+            display: flex;
+            .margin(0,30,0,30);
+            .padding(20,0,20,0);
+            border-bottom: 1px solid #cccccc;
+
+            > p {
+                flex: 1;
+                .line-height(40);
+                .font-size(32);
+                color: @333;
+            }
+        }
+
+        .bottomBox {
+            text-align: right;
+            .padding(18,30,18,30);
+            > p {
+                .line-height(76);
+                .font-size(32);
+                color: @333;
+                > img {
+                    display: inline-block;
+                    .width(140);
+                    .height(76);
+                    border: 1px solid #999;
+                }
+            }
+        }
+    }
+}

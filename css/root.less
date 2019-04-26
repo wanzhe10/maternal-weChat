@@ -1,0 +1,194 @@
+@fontColor: #1A8FD3;
+@666: #666666;
+@666666: #666666;
+@333: #333333;
+@999: #999999;
+@000: #000000;
+@bgColor: #eaeaea;
+@textColor: #333;
+@fff: #fff;
+@borderColor: #a5a5a5;
+@qing: #8ee0fb;
+@errorColor: #ff0000;
+@level0: green;
+@level1: yellow;
+@level2: orange;
+@level3: red;
+@level4: purple;
+.level0 {
+    color: @fff;
+    background: @level0;
+}
+.level1 {
+    color: @999;
+    background: @level1;
+}
+.level2 {
+    color: @fff;
+    background: @level2;
+}
+.level3 {
+    color: @fff;
+    background: @level3;
+}
+.level4 {
+    color: @fff;
+    background: @level4;
+}
+@fold: 40rem;
+
+.width (@num) {
+    width: @num/@fold;
+}
+
+.max-width (@num) {
+    max-width: @num/@fold;
+}
+
+.min-width (@num) {
+    min-width: @num/@fold;
+}
+
+.height (@num) {
+    height: @num/@fold;
+}
+
+.min-height(@num) {
+    min-height: @num/@fold;
+}
+
+.max-height(@num) {
+    max-height: @num/@fold;
+}
+
+.font-size (@num) {
+    font-size: @num/@fold;
+}
+
+.line-height (@num) {
+    line-height: @num/@fold;
+}
+
+.text-indent(@num) {
+    text-indent: @num/@fold;
+}
+
+.background-size(@w, @h) {
+    background-size: @w/@fold @h/@fold;
+}
+
+.padding (@t, @r, @b, @l) {
+    padding: @t/@fold @r/@fold @b/@fold @l/@fold;
+}
+
+.padding-top(@num: 0) {
+    padding-top: @num/@fold;
+}
+
+.padding-left(@num: 0) {
+    padding-left: @num/@fold;
+}
+
+.padding-right(@num: 0) {
+    padding-right: @num/@fold;
+}
+
+.padding-bottom(@num: 0) {
+    padding-bottom: @num/@fold;
+}
+
+.margin (@t, @r, @b, @l) {
+    margin: @t/@fold @r/@fold @b/@fold @l/@fold;
+}
+
+.margin-top(@num: 0) {
+    margin-top: @num/@fold;
+}
+
+.margin-right(@num: 0) {
+    margin-right: @num/@fold;
+}
+
+.margin-left(@num: 0) {
+    margin-left: @num/@fold;
+}
+
+.margin-bottom(@num: 0) {
+    margin-bottom: @num/@fold;
+}
+
+.left(@num) {
+    left: @num/@fold;
+}
+
+.right(@num) {
+    right: @num/@fold;
+}
+
+.bottom(@num) {
+    bottom: @num/@fold;
+}
+
+.top(@num) {
+    top: @num/@fold;
+}
+
+.box-shadow (@x: 0, @y: 0, @size: 12px, @spread: 4px, @color: rgba(51, 51, 51, 0.08)) {
+    -webkit-box-shadow: @x/@fold @y/@fold @size @spread @color;
+    -ms-box-shadow: @x/@fold @y/@fold @size @spread @color;
+    -moz-box-shadow: @x/@fold @y/@fold @size @spread @color;
+    -o-box-shadow: @x/@fold @y/@fold @size @spread @color;
+    box-shadow: @x/@fold @y/@fold @size @spread @color;
+}
+
+.border-width(@num) {
+    border-width: @num/@fold;
+}
+
+.border-radius (@t: 15, @r: 15, @b: 15, @l: 15) {
+    -webkit-border-radisu: @t/@fold @r/@fold @b/@fold @l/@fold;
+    -ms-border-radisu: @t/@fold @r/@fold @b/@fold @l/@fold;
+    -moz-border-radisu: @t/@fold @r/@fold @b/@fold @l/@fold;
+    -o-border-radisu: @t/@fold @r/@fold @b/@fold @l/@fold;
+    border-radius: @t/@fold @r/@fold @b/@fold @l/@fold;
+}
+// 按钮渐变背景
+
+.btnBg {
+    background: linear-gradient(45deg, #75cae5 , #8fe2fc);
+}
+/* 选择器样式-start */
+.selectStyle header.iosselect-header a.close,
+.selectStyle header.iosselect-header a.sure {
+    .font-size(32);
+}
+.selectStyle header #iosSelectTitle {
+    .font-size(34);
+}
+.selectStyle ul li,.selectStyle ul li.at,.selectStyle ul li.side1 {
+    .font-size(34);
+}
+/* 选择器样式-end */
+
+// 错误样式-start
+.error {
+    position: relative;
+    border-bottom: 1px solid @errorColor !important;
+    &:after {
+        content: '输入的内容不符合规则';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        color: @errorColor;
+        .font-size(28);
+        z-index: 101;
+        transform: translateY(101%);
+        background: #fff;
+        width: 100%;
+        .line-height(42);
+    }
+    input {
+        color: @errorColor !important;
+    }
+}
+// 错误样式-end

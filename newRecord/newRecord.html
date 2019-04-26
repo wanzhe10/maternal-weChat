@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- 网站标题 google：66个字符也就是33个文字以内 百度：60个字符也就是30个文字以内 -->
+    <title>新建档案</title>
+    <!-- 用户是否可以通过他的手势来缩放整个应用程序 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <!-- 作者 -->
+    <meta name="author" content="">
+    <!-- 描述 google：240个字符即120个文字以内 百度：220个字符即110个文字以内 -->
+    <meta name="description" content="">
+    <!-- 关键字 不超过100个字符50个文字以内 -->
+    <meta name="Keywords" content="">
+    <meta name="full-screen" content="yes" />
+    <!-- 将不识别手机号 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 将不识别邮箱 -->
+    <meta name="format-detection" content="email=no" />
+    <!-- 禁止跳转至地图 -->
+    <meta name="format-detection" content="address=no" />
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <script type="text/javascript">
+        !(function(doc, win) {
+            var docEle = doc.documentElement, //获取html元素
+                event = "onorientationchange" in window ? "orientationchange" : "resize",
+                fn = function() {
+                    var width = docEle.clientWidth;
+                    width && (docEle.style.fontSize = (width / 18.75) + "px");
+                }
+            win.addEventListener(event, fn, false);
+            win.addEventListener("DOMContentLoaded", fn, false);
+            win.addEventListener("resize", fn, false);
+        })(document, window);
+    </script>
+    <link rel="stylesheet" href="/maternal-weChat/plugins/layui/css/layui.css">
+    <link rel="stylesheet" href="/maternal-weChat/plugins/iosSelect/iosSelect.css">
+    <link rel="stylesheet/less" type="text/css" href="/maternal-weChat/newRecord/newRecord.less" />
+    <script src="/maternal-weChat/js/jquery.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/plugins/layui/layui.all.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/plugins/iosSelect/iosSelect.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/plugins/iosSelect/iosSelectData.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/less.min.js"></script>
+    <script src="/maternal-weChat/js/utils.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/aesJson.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/aesUtilJson.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/root.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/WeChatAuthorUntil.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/areaData.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/newRecord/newRecord.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/template/template.js" charset="utf-8"></script>
+</head>
+
+<body id="classBody">
+    <div class="tabContent">
+        <a class="active" href="javascript:;">孕妇信息</a>
+        <a href="javascript:;">配偶信息</a>
+        <a href="javascript:;">孕产信息</a>
+    </div>
+    <div class="promptBox">
+        <h2 class="promptTitle">温馨提示 :</h2>
+        <p class="promptText">为了节约您的宝时间，减少排队等待时间来院就诊前请将信息场写完整，该数据用于本院建档，严格密/完成度</p>
+    </div>
+    <div class="content">
+        <!-- 孕妇信息 -->
+        <div class="item active">
+            <div class="infoBox">
+                <h2>孕妇信息</h2>
+                <div class="inputItem">
+                    <span>孕妇姓名 :</span><input class="pregnantName" type="text" placeholder="请输入姓名">
+                </div>
+                <div class="selItem">
+                    <span>证件类型 :</span>
+                    <input class="papersInput" type="text" placeholder="请选择">
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                    <a class="papersSelect" href="javascript:;"></a>
+                </div>
+                <!-- type="number" -->
+                <div class="inputItem"><span>身份证号 :</span><input class="idCard"  placeholder="请输入身份证号"></div>
+                <div class="inputItem"><span>手  机  号 :</span><input class="telephone" type="text" pattern="[0-9]*" placeholder="请输入手机号"></div>
+                <div class="selItem">
+                    <span>婚检 :</span>
+                    <input class="marryCheckInput" type="text" placeholder="请选择">
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                    <a class="marryCheckSelect" href="javascript:;"></a>
+                </div>
+                <div class="selItem">
+                    <span>婚姻状况 :</span>
+                    <input class="marryTypeInput" type="text" placeholder="请选择">
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                    <a class="marryTypeSelect" href="javascript:;"></a>
+                </div>
+                <div class="inputItem"><span>结婚年龄 :</span><input class="marryAge" type="text" pattern="[0-9]*" placeholder="请输入结婚年龄"></div>
+                <div class="inputItem"><span>孕前体重 :</span><input class="lastWeight" type="number" placeholder="请输入体重Kg"></div>
+                <!-- <div class="inputItem"><span>身 高 :</span><input type="text" placeholder="请输入身高"></div> -->
+                <div class="selItem">
+                    <span>近半年的避孕方法 :</span>
+                    <input class="contraceptionCheckInput" type="text" placeholder="请选择">
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                    <a class="contraceptionCheckSelect" href="javascript:;"></a>
+                </div>
+                <!-- <div class="inputItem"><span>近半年的避孕方法 :</span><input type="text" class="contraception" placeholder="请输入避孕方法"></div> -->
+                <div class="inputItem"><span>出生年月 :</span><input class="birthdayDate" type="text" readonly="readonly" placeholder="自动计算"></div>
+                <div class="inputItem"><span>年龄 :</span><input class="age" type="text" readonly="readonly" placeholder="自动计算"></div>
+                <div class="inputItem"><span>公司名称 :</span><input class="jobCompanyName" type="text" placeholder="请输入公司名称"></div>
+            </div>
+            <div class="infoBox">
+                <div class="selItem">
+                    <span>职       业 :</span>
+                    <input class="occupationInput" type="text" placeholder="请选择职业">
+                    <a class="occupationSelect" href="javascript:;"></a>
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                </div>
+                <div class="selItem">
+                    <span>文化程度 :</span>
+                    <input class="diplomaInput" type="text" placeholder="请选择文化程度">
+                    <a class="diplomaSelect" href="javascript:;"></a>
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                </div>
+                <div class="selItem">
+                    <span>民族 :</span>
+                    <input class="nationInput" type="text" placeholder="请选择民族">
+                    <a class="nationSelect" href="javascript:;"></a>
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                </div>
+                <!-- class="selItem" -->
+                <div class="selItem">
+                    <span>户口所在地 :</span>
+                    <textarea  class="areaInput textareaOne" readonly = true>请选择</textarea>
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                    <a class="areaSelect" href="javascript:;"></a>
+                </div>
+
+                <div class="selItem">
+                    <span>现住地址 :</span>
+                    <textarea  class="presentAreaInput textareaOne" readonly = true>请选择</textarea>
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                    <a class="presentAreaSelect" href="javascript:;"></a>
+                </div>
+                <div class="inputItem">
+                    <span>现住详细地址 :</span><input class="newAddressRemarks" type="text" placeholder="请输入现住详细地址.....">
+                </div>
+
+
+            </div>
+
+        </div>
+        <!-- 配偶信息 -->
+        <div class="item">
+            <div class="infoBox">
+                <h2>配偶信息</h2>
+                <div class="inputItem">
+                    <span>丈夫姓名 :</span><input class="mateName" type="text" placeholder="请输入姓名">
+                </div>
+                <div class="selItem">
+                    <span>证件类型 :</span>
+                    <input class="mateInput" type="text" placeholder="请选择">
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                    <a class="mateSelect" href="javascript:;"></a>
+                </div>
+                <div class="inputItem"><span>身份证号 :</span>
+                    <input class="mateIdCard" type="text" placeholder="请输入身份证号">
+                </div>
+                <div class="inputItem">
+                    <span>手  机  号 :</span>
+                    <input class="mateTelephone" pattern="[0-9]*" type="text" placeholder="请输入手机号">
+                </div>
+                <div class="selItem">
+                    <span>婚检 :</span>
+                    <input class="mateMarryCheckInput" type="text" placeholder="请选择">
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                    <a class="mateMarryCheckSelect" href="javascript:;"></a>
+                </div>
+                <div class="selItem">
+                    <span>婚姻状况 :</span>
+                    <input class="mateMarryTypeInput" type="text" placeholder="请选择">
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                    <a class="mateMarryTypeSelect" href="javascript:;"></a>
+                </div>
+                <div class="inputItem"><span>结婚年龄 :</span><input class="mateMarryAge" pattern="[0-9]*" type="text" placeholder="请输入结婚年龄"></div>
+                <div class="inputItem"><span>出生年月 :</span><input class="mateBirthdayDate" type="text" readonly="readonly" placeholder="自动计算"></div>
+                <div class="inputItem"><span>年龄 :</span><input class="mateAge" type="text" readonly="readonly" placeholder="自动计算"></div>
+            </div>
+            <div class="infoBox">
+                <div class="selItem">
+                    <span>职       业 :</span>
+                    <input class="mateOccupationInput" type="text" placeholder="请选择职业">
+                    <a class="mateOccupationSelect" href="javascript:;"></a>
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                </div>
+                <div class="selItem">
+                    <span>文化程度 :</span>
+                    <input class="educationInput" type="text" placeholder="请选择文化程度">
+                    <a class="educationSelect" href="javascript:;"></a>
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                </div>
+                <div class="selItem">
+                    <span>健康状况 :</span>
+                    <input class="healthTypeInput" type="text" placeholder="请选择健康状况">
+                    <a class="healthTypeSelect" href="javascript:;"></a>
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                </div>
+                <div class="selItem">
+                    <span>是否吸烟 :</span>
+                    <input class="smokeInput" type="text" placeholder="请选择">
+                    <a class="smokeSelect" href="javascript:;"></a>
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                </div>
+                <div class="inputItem smokeBox"><span>抽烟数量 :</span><input class="smokeNumInput" type="text" pattern="[0-9]*" placeholder="请输入每天抽烟数量单位：支"></div>
+                <div class="selItem">
+                    <span>是否饮酒 :</span>
+                    <input class="drinkInput" type="text" placeholder="请选择">
+                    <a class="drinkSelect" href="javascript:;"></a>
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                </div>
+                <div class="tempSelItem">
+                    <span>家族史 :</span>
+                    <input class="patientHistory" type="text" placeholder="请输入家族史.....">
+                    <a class="patientHistorySelect" href="javascript:;"></a>
+                </div>
+                <div class="selItem">
+                    <span>现住地址 :</span>
+                    <textarea  class="mateAreaInput textareaOne" readonly = true>请选择</textarea>
+                    <!-- <input class="mateAreaInput" type="text" placeholder="请选择"> -->
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                    <a class="mateAreaSelect" href="javascript:;"></a>
+                </div>
+                <div class="inputItem">
+                    <span>现住详细地址 :</span><input class="mateNewAddressRemarks" type="text" placeholder="请输入现住详细地址.....">
+                </div>
+            </div>
+        </div>
+        <!-- 孕产信息 -->
+        <div class="item">
+            <div class="infoBox">
+                <h2>孕产信息</h2>
+                <div class="selItem">
+                    <span>初诊日期 :</span>
+                    <input class="firstCheckDateInput" type="text" placeholder="请选择">
+                    <a class="firstCheckDateBtn" href="javascript:;"></a>
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                </div>
+                <div class="selItem">
+                    <span>末次月经 :</span>
+                    <input class="lastMenstruationInput" type="text" placeholder="请选择">
+                    <a class="lastMenstruationBtn" href="javascript:;"></a>
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                </div>
+                <div class="inputItem">
+                    <span>初潮 :</span><input class="menstrualHistoryAge" type="text" pattern="[0-9]*" placeholder="请输入初潮年龄">
+                </div>
+                <div class="inputItem">
+                    <span>周期 :</span><input class="menstrualHistoryDay" type="text" pattern="[0-9]*" placeholder="请输入初潮周期">
+                </div>
+                <!-- <div class="inputItem">
+                    <span>怀孕次数 :</span><input class="pregnancyNumber" type="text" pattern="[0-9]*" placeholder="请输入怀孕次数">
+                </div> -->
+                <div class="selItem">
+                    <span>怀孕次数:</span>
+                    <input class="pregnancyNumber" type="text" placeholder="请选择">
+                    <a class="pregnancyNumberSelect" href="javascript:;"></a>
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                </div>
+                <div class="selItem">
+                    <span>尿  酮  体 :</span>
+                    <input class="ketosisInput" type="text" placeholder="请选择">
+                    <a class="ketosisSelect" href="javascript:;"></a>
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                </div>
+                <div class="selItem">
+                    <span>早孕反应程度 :</span>
+                    <input class="morningSicknessInput" type="text" placeholder="请选择">
+                    <a class="morningSicknessSelect" href="javascript:;"></a>
+                    <img src="/maternal-weChat/images/right_arrow.png" alt="">
+                </div>
+                <div class="tempSelItem">
+                    <span>家族史 :</span>
+                    <input class="pregnancyFamilyHistory" type="text" placeholder="请输入家族史.....">
+                    <a class="pregnancyFamilyHistorySelect" href="javascript:;"></a>
+                </div>
+                <div class="tempSelItem">
+                    <span>现病史 :</span>
+                    <input class="nowHistory" type="text" placeholder="请输入现病史.....">
+                    <a class="nowHistorySelect" href="javascript:;"></a>
+                </div>
+               <!--  <div class="inputItem">
+                    <span>家族史 :</span><input class="pregnancyFamilyHistory" type="text" placeholder="请输入家族史.....">
+                </div>
+                <div class="inputItem">
+                    <span>现病史 :</span><input class="nowHistory" type="text" placeholder="请输入现病史.....">
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- 患者信息-start -->
+    <div class="userInfo">
+        <div class="basisInfo">
+            <p class="name pregnantNameText">孕妇姓名</p>
+            <p class="tel telephoneText">孕妇手机号</p>
+            <span class="risk">低风险</span>
+        </div>
+        <div class="disInfo">
+            <p><span>孕 周 :</span><span class="pregnantDay"></span></p>
+            <p><span>孕产期 :</span><span class="expectedText"></span></p>
+            <p><span>末次月经 :</span><span class="lastMenstruationText"></span></p>
+        </div>
+    </div>
+    <!-- 患者信息-end -->
+    <div class="submitContent">
+        <a class="submitBtn active firstStep" href="javascript:;">下一步</a>
+        <a class="submitBtn secondStep" href="javascript:;">下一步</a>
+        <a class="submitBtn thirdStep" href="javascript:;">保 存</a>
+    </div>
+
+    <div class="footer">copyright &copy; 医来医往(北京)科技有限公司</div>
+
+    <!-- 建档须知-start -->
+    <div class="noticeContainer">
+        <div class="noticeContent">
+            <h2 class="noticeTitle">自助建档须知</h2>
+            <div class="noticeBox">
+            </div>
+            <div class="btnContent">
+                <a class="noBtn" href="javascript:;">关 闭</a>
+                <a class="yesBtn" href="javascript:;">确 认</a>
+            </div>
+        </div>
+    </div>
+    <!-- 建档须知-end -->
+    <!-- 滚轮选择器-start -->
+    <div class="selectContent"></div>
+    <!-- 滚轮选择器-end -->
+    <!-- 时间选择 start -->
+    <div class="dateContent" style="display:none;">
+        <div class="layui-inline" id="dateBox"></div>
+    </div>
+    <div class="menstruationBox" style="display:none;">
+        <div class="layui-inline" id="menstruationDate"></div>
+    </div>
+    <!-- 时间选择 end -->
+
+    <!-- 成功提示start -->
+    <div class="successContent">
+        <h2>申请档案</h2>
+        <div class="content">
+            <img src="./success.png" alt="">
+            <p>提交成功，请耐心等待医师/护士审核</p>
+        </div>
+        <a class="successBtn" href="javascript:;">确定</a>
+    </div>
+    <!-- 成功提示end -->
+
+    <!-- 模板选择-start -->
+    <!-- <div class="tempContainer" style="visibility:hidden;"> onClick="event.cancelBubble = true" style="margin-top:0"-->
+    <div class="tempContainer"  style="visibility:hidden;">
+        <div class="tempContent">
+            <div class="tempTitle">
+                <input class="tempTitleInput" type="text" placeholder="请输入现病史">
+                <span class="tempSelect">搜索</span>
+            </div>
+            <div class="tempChangeDetDiv">
+            <!-- <span class="tempChangeDetSpan">癫痫</span>
+            <span class="tempChangeDetSpan">恶性肿瘤</span>
+            <span class="tempChangeDetSpan">肺气肿</span> -->
+                <!-- <span class="tempChangeDetSpan">搜索1</span> -->
+                <!-- <img class="" src="/maternal-weChat/images/delete.png" style="margin-left: -15px;margin-top:-30px;width: 20px;height: 20px"> -->
+            </div>
+            <div class="tempBox">
+            </div>
+            <div class="btnContent">
+                <a class="noBtn" href="javascript:;">取 消</a>
+                <a class="yesBtn" href="javascript:;">确 认</a>
+            </div>
+        </div>
+    </div>
+    <!-- 模板选择-end -->
+
+</body>
+
+</html>

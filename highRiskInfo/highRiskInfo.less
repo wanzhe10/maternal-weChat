@@ -1,0 +1,203 @@
+@import "../css/reset.css";
+@import "../css/root.less";
+@import "../css/footer.less";
+
+body {
+    background: @bgColor;
+    .padding(20,20,0,20);
+}
+
+// 导航悬浮-start
+.navListContent {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 105;
+    background: #fff;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+    .navListBox {
+        .margin(100,20,0,20);
+        background: #fff;
+
+        border: 1px solid #cccccc;
+        .titleBox {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #cccccc;
+
+            > h2 {
+                .padding-left(25);
+                .font-size(34);
+                color: #333333;
+                .line-height(84);
+                font-weight: bold;
+                background: #fafafa;
+            }
+            > img {
+                display: block;
+                .width(80);
+                .height(80);
+                .padding(25,25,25,25);
+            }
+        }
+
+        .navList {
+            .height(535);
+            overflow-y: scroll;
+            .padding(20,25,20,25);
+            > a {
+                display: block;
+                .font-size(30);
+                color: #999999;
+                .line-height(56);
+                &.active {
+                    color: #8ee0fb;
+                }
+            }
+        }
+    }
+}
+// 导航悬浮-end
+
+.mainContent {
+    position: relative;
+    .padding-bottom(30);
+    .box-shadow();
+    background: @fff;
+
+    .tabContent {
+        position: relative;
+        overflow: hidden;
+        .height(80);
+        border-bottom: 1px solid #cccccc;
+        .navBox {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            // .line-height(80);
+            .padding-right(74);
+            white-space:nowrap;
+            > a {
+                .margin(0,30,0,30);
+                display: flex;
+                .height(80);
+                align-items: center;
+                .font-size(34);
+                color: @333;
+                &.active {
+                    color: @qing;
+                    border-bottom: 2px solid @qing;
+                }
+            }
+        }
+        .btnBox {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 11;
+            .width(74);
+            height: 100%;
+            .box-shadow();
+            background: url('../images/bottom_arrow.png') no-repeat center #fff;
+            .background-size(27,15);
+        }
+    }
+    .dateContent {
+        .margin(25,20,0,20);
+        .padding(0,15,0,15);
+        background: #f6f6f6;
+        .border-radius();
+
+        > hr {
+            padding: 0;
+            margin: 0;
+        }
+
+        > p {
+            .font-size(32);
+            color: @333;
+            .line-height(88);
+
+            > span {
+                .font-size(30);
+                .padding(0,10,0,5);
+            }
+            .riskBox {
+                display: inline-block;
+                .font-size(30);
+                .line-height(40);
+                .padding(5,20,5,20);
+                .margin-right(20);
+            }
+        }
+    }
+
+    .tableContent {
+        .margin(15,20,0,20);
+        .padding(0,15,18,15);
+        border: 1px solid @borderColor;
+
+        .tableItem {
+            .padding(16,0,5,0);
+            border-bottom: 1px solid @borderColor;
+
+            .title {
+                .line-height(52);
+                .font-size(32);
+                color: @333;
+            }
+
+            .desc {
+                .line-height(40);
+                .font-size(30);
+                color: @666;
+            }
+        }
+    }
+
+    .signatureContent {
+        .margin(20,20,0,20);
+        background: #f1f1f1;
+        display: flex;
+        justify-content: space-between;
+        > div {
+            .padding(0,15,18,15);
+            > p {
+                .line-height(73);
+                .font-size(28);
+                color: @333;
+            }
+            .signatureImg {
+                display: block;
+                .width(286);
+                .height(156);
+                background: #fff;
+            }
+        }
+    }
+}
+
+
+// 查看大图-start
+.bigImgContent {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+    align-items: center;
+    justify-content: center;
+    > img {
+        display: block;
+        width: 100%;
+    }
+}
+// 查看大图 - start

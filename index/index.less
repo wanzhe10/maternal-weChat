@@ -1,0 +1,64 @@
+@import "../css/reset.css";
+@import "../css/root.less";
+@import "../css/footer.less";
+body {
+    background: @bgColor;
+}
+// 绑卡部分
+.bindCardContent {
+    .margin(20,20,20,20);
+    .padding(58,0,35,0);
+    text-align: center;
+    background: @fff;
+    border: 1px dotted @borderColor;
+    > img {
+        .width(105);
+        .height(91);
+    }
+    > p {
+        .margin-bottom(20);
+        .font-size(34);
+        color: @666666;
+        .line-height(66);
+    }
+    > a {
+        display: inline-block;
+        .width(231);
+        .height(62);
+        background: linear-gradient(45deg, #75cae5 , #8fe2fc);
+        color: #fff;
+        .font-size(30);
+        .line-height(62);
+        text-align: center;
+    }
+}
+// 分块部分
+.mainContent {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .margin(10,20,0,20);
+    > a {
+        .margin-bottom(20);
+        display: block;
+        box-sizing: border-box;
+        .width(345);
+        .height(187);
+        background: @fff;
+        .padding(40,15,0,30);
+        > h2 {
+            .font-size(34);
+            color: @333;
+        }
+        > p {
+            .font-size(30);
+            color: @999;
+        }
+        > span {
+            display: block;
+            text-align: right;
+            .font-size(30);
+            color: @qing;
+        }
+    }
+}

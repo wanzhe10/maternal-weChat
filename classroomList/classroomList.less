@@ -1,0 +1,97 @@
+@import "../css/reset.css";
+@import "../css/root.less";
+@import "../css/footer.less";
+body {
+    background-color: #f9f9f9;
+}
+
+.ceant {
+    background-color: #fff;
+    .padding(30, 30, 30, 30);
+    ul {
+        li {
+            border-bottom: 1px solid #ccc;
+            .padding(35, 0, 35, 0);
+            div {
+                float: left;
+                .width(390);
+                h3 {
+                    .font-size(34);
+                    color: #333333;
+                }
+                p {
+                    .width(374);
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    .font-size(28);
+                    color: #777777;
+                    .margin-top(30);
+                }
+            }
+            img {
+                .width(252);
+                .height(167);
+                float: right;
+            }
+        }
+        li:nth-last-child(1) {
+            border: none;
+        }
+    }
+}
+
+footer {
+    position: relative;
+    .height(234);
+    background-color: #f9f9f9;
+    .wires1,
+    .wires2 {
+        position: absolute;
+        .width(70);
+        .height(5);
+        background-color: #cbcbcb;
+    }
+    .circle1,
+    .circle2 {
+        position: absolute;
+        .width(20);
+        .height(20);
+        background-color: #cbcbcb;
+        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        /* Internet Explorer */
+        -moz-transform: rotate(45deg);
+        /* Firefox */
+        -webkit-transform: rotate(45deg);
+        /* Safari 和 Chrome */
+        -o-transform: rotate(45deg);
+        /* Opera */
+        margin: 50px auto;
+        /*让菱形浏览器上居中*/
+    }
+    .wires1 {
+        position: absolute;
+        .top(113);
+        .left(180);
+    }
+    .wires2 {
+        .top(113);
+        .right(180);
+    }
+    .circle1 {
+        .top(-10);
+        .left(250);
+    }
+    .circle2 {
+        .top(-10);
+        .right(250);
+    }
+    span {
+        .font-size(24);
+        color: #999999;
+        position: absolute;
+        .top(95);
+        .left(290);
+    }
+}

@@ -1,0 +1,41 @@
+maternal-weChat 孕产妇-微信端 目录结构
+/maternal-weChat
+    /js                         公共js
+    /css                        公共css
+    /images                     公共图片
+    /plugins                    插件库
+    /index                      首页                  完成
+        /index.html
+        /index.js
+        /index.less
+    /bindCard                   绑卡页面               完成
+        /bindCard.html
+    /newRecord
+        /newRecord.html         新建档案
+    /qrcode                     二维码
+        /qrcode.html
+    /user                       个人中心
+        /user.html
+    /userInfo                   个人中心详情
+        /userInfo.html
+    /recheckList                复检记录 列表
+        /recheckList.html
+    /recheckInfo                复检记录 详情
+        /recheckInfo.html
+    /highRiskList               高危评估 列表
+        /highRiskList.html
+    /highRiskInfo               高危评估 详情1
+        /highRiskInfo.html
+    /cautionList                复检提醒 列表详情
+        /cautionList.html
+    /synopsis                   科室简介
+        /synopsis.html
+    /propaganda                 宣教
+        /propaganda.html
+    /classroomList              在线课堂列表
+        /classroomList.html
+    /encyDetails                在线课堂列表详情
+        /encyDetails.html
+    
+
+--------------------------------

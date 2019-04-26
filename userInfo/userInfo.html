@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- 网站标题 google：66个字符也就是33个文字以内 百度：60个字符也就是30个文字以内 -->
+    <title>个人中心详情</title>
+    <!-- 用户是否可以通过他的手势来缩放整个应用程序 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <!-- 作者 -->
+    <meta name="author" content="">
+    <!-- 描述 google：240个字符即120个文字以内 百度：220个字符即110个文字以内 -->
+    <meta name="description" content="">
+    <!-- 关键字 不超过100个字符50个文字以内 -->
+    <meta name="Keywords" content="">
+    <meta name="full-screen" content="yes" />
+    <!-- 将不识别手机号 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 将不识别邮箱 -->
+    <meta name="format-detection" content="email=no" />
+    <!-- 禁止跳转至地图 -->
+    <meta name="format-detection" content="address=no" />
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <script type="text/javascript">
+        !(function(doc, win) {
+            var docEle = doc.documentElement, //获取html元素
+                event = "onorientationchange" in window ? "orientationchange" : "resize",
+                fn = function() {
+                    var width = docEle.clientWidth;
+                    width && (docEle.style.fontSize = (width / 18.75) + "px");
+                }
+            win.addEventListener(event, fn, false);
+            win.addEventListener("DOMContentLoaded", fn, false);
+            win.addEventListener("resize", fn, false);
+        })(document, window);
+    </script>
+    <link rel="stylesheet" href="/maternal-weChat/plugins/layui/css/layui.css">
+    <link rel="stylesheet/less" type="text/css" href="/maternal-weChat/userInfo/userInfo.less" />
+    <script src="/maternal-weChat/js/jquery.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/plugins/layui/layui.all.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/less.min.js"></script>
+    <script src="/maternal-weChat/js/utils.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/aesJson.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/aesUtilJson.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/root.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/userInfo/userInfo.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div class="tabContent">
+        <a class="active" href="javascript:;">孕妇信息</a>
+        <a href="javascript:;">配偶信息</a>
+        <a href="javascript:;">孕产信息</a>
+        <a href="javascript:;">体格检查</a>
+    </div>
+    <div class="content">
+        <!-- 孕妇信息 -->
+        <div class="item active">
+            <div class="infoBox">
+                <h2>孕妇信息</h2>
+                <div class="itemBox">
+                    <p><span class="itemTitle">孕妇姓名 :</span><span class="value pregnantName"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">证件类型 :</span><span class="value idCardType"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">身份证号 :</span><span class="value idCard"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">手 机 号 :</span><span class="value telephone"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">近半年的避孕方法 :</span><span class="value contraception"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">婚姻状况 :</span><span class="value marryType"></span></p>
+                    <p><span class="itemTitle">结婚年龄 :</span><span class="value marryAge"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">孕前体重 :</span><span class="value lastWeight"></span></p>
+                    <p><span class="itemTitle">年龄 :</span><span class="value age"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">出生年月 :</span><span class="value birthdayDate"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">公司名称 :</span><span class="value jobCompanyName"></span></p>
+                </div>
+            </div>
+            <div class="infoBox">
+                <div class="itemBox">
+                    <p><span class="itemTitle">职 业 :</span><span class="value job"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">文化程度 :</span><span class="value education"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">户口所在地 :</span><span class="value areaText"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">现住地址 :</span><span class="value newAddr"></span></p>
+                </div>
+            </div>
+        </div>
+        <!-- 配偶信息 -->
+        <div class="item">
+            <div class="infoBox">
+                <h2>配偶信息</h2>
+                <div class="itemBox">
+                    <p><span class="itemTitle">丈夫姓名 :</span><span class="value mateName"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">证件类型 :</span><span class="value mateIdCardType"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">身份证号 :</span><span class="value mateIdCard"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">手 机 号 :</span><span class="value mateTelephone"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">婚姻状况 :</span><span class="value mateMarryType"></span></p>
+                    <p><span class="itemTitle">结婚年龄 :</span><span class="value mateMarryAge"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">年龄 :</span><span class="value mateAge"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">出生年月 :</span><span class="value mateBirthdayDate"></span></p>
+                </div>
+            </div>
+            <div class="infoBox">
+                <div class="itemBox">
+                    <p><span class="itemTitle">职 业 :</span><span class="value mateOccupationInput"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">文化程度 :</span><span class="value educationInput"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">健康状况 :</span><span class="value healthTypeInput"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">是否抽烟 :</span><span class="value smokeInput"></span></p>
+                    <p class="smokeBox"><span class="itemTitle">数量 :</span><span class="value smokeNum"></span><span class="unit">支</span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">是否饮酒 :</span><span class="value drinkInput"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">家族史 :</span><span class="value patientHistory"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">现住地址 :</span><span class="value mateAreaInput"></span></p>
+                </div>
+            </div>
+        </div>
+        <!-- 孕产信息 -->
+        <div class="item">
+            <div class="infoBox">
+                <h2>孕产信息</h2>
+                <div class="itemBox">
+                    <p><span class="itemTitle">初诊日期 :</span><span class="value firstCheckDate"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">末次月经 :</span><span class="value lastMenstruation"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">预 产 期 :</span><span class="value dueDate"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">初潮 :</span><span class="value menstrualHistoryAge"></span></p>
+                    <p><span class="itemTitle">周期 :</span><span class="value menstrualHistoryDay"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">怀孕次数 :</span><span class="value pregnancyNumber"></span></p>
+                </div>
+                <div class="pregnancyContent">
+                    <div class="pregnancyTab">
+                        <!-- <a class="active" href="javascript:;">胎次:1</a>
+                        <a href="javascript:;">胎次:2</a>
+                        <a href="javascript:;">胎次:3</a>
+                        <a href="javascript:;">胎次:4</a>
+                        <a href="javascript:;">胎次:5</a> -->
+                    </div>
+                    <div class="pregnancyBox">
+                       <!--  <div class="pregnancyItem active">
+                            <div class="baseBox">
+                                <p class="">2015-11-25</p><p>孕36周</p><p>自然分娩</p><p>孕产年龄 : 25</p><p>婴儿性别 : 男</p>
+                            </div>
+                            <div class="remarkBox">
+                                <p>备注信息 : </p>
+                            </div>
+                        </div>
+                        <div class="pregnancyItem">
+                            <div class="baseBox">
+                                <p class="">2015-11-23</p><p>孕36周</p><p>自然分娩</p><p>孕产年龄 : 25</p><p>婴儿性别 : 男</p>
+                            </div>
+                            <div class="remarkBox">
+                                <p>备注信息 : </p>
+                            </div>
+                        </div>
+                         <div class="pregnancyItem">
+                            <div class="baseBox">
+                                <p class="">2015-11-23</p><p>孕36周</p><p>自然分娩</p><p>孕产年龄 : 25</p><p>婴儿性别 : 男</p>
+                            </div>
+                            <div class="remarkBox">
+                                <p>备注信息 : </p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">尿 酮 体 :</span><span class="value ketosis"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">早孕反应程度 :</span><span class="value morningSickness"></span></p>
+                </div>
+            </div>
+
+            <div class="infoBox">
+                <div class="itemBox">
+                    <p><span class="itemTitle">家 族 史 :</span><span class="value familyHistory"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">现病史 :</span><span class="value nowHistory"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">孕前是否用药 :</span><span class="value parturitionFrontPharmacy"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">病毒感染 :</span><span class="value virusInfection"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">接触毒物 :</span><span class="value contactToxic"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">宠物接触史 :</span><span class="value animalContact"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">接触放射线 :</span><span class="value contactRadioactiveRays"></span></p>
+                </div>
+            </div>
+        </div>
+        <!-- 体格检查 -->
+        <div class="item">
+            <div class="infoBox">
+                <h2>体格检查</h2>
+                <h3>一般检查</h3>
+                <div class="itemBox">
+                    <p><span class="itemTitle">血压 :</span><span class="value bloodPressure"></span><span class="unit">mmHg</span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">身高 :</span><span class="value baseHeight"></span><span class="unit">cm</span></p>
+                    <p><span class="itemTitle">体重 :</span><span class="value baseWeight"></span><span class="unit">Kg</span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">心率 :</span><span class="value baseHeartRate"></span>
+                        <!-- <span class="unit">次/分</span> -->
+                    </p>
+                    <p><span class="itemTitle">肺 :</span><span class="value baseLung"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">肝 :</span><span class="value baseAbdomenLiver"></span></p>
+                    <p><span class="itemTitle">脾 :</span><span class="value baseAbdomenSpleen"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">乳房 :</span><span class="value breasts"></span></p>
+                    <p><span class="itemTitle">乳头 :</span><span class="value nipple"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">四肢畸形 :</span><span class="value baseSpinalLimbsDeformity"></span></p>
+                    <p><span class="itemTitle">四肢水肿 :</span><span class="value baseSpinalLimbsEdema"></span></p>
+                </div>
+            </div>
+            <div class="infoBox">
+                <h3>妇科检查/产科检查</h3>
+                <div class="itemBox">
+                    <p><span class="itemTitle">外阴 :</span><span class="value obstetricsVulva"></span></p>
+                    <p><span class="itemTitle">阴道 :</span><span class="value obstetricsVagina"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">宫颈 :</span><span class="value obstetricsCervix"></span></p>
+                    <p><span class="itemTitle">宫体 :</span><span class="value obstetricsCorpus"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">附件 :</span><span class="value obstetricsPairsAttachment"></span></p>
+                    <p><span class="itemTitle">宫高 :</span><span class="value obstetricsHeight"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">腹围 :</span><span class="value obstetricsAbdominalGirth"></span></p>
+                    <p><span class="itemTitle">先露 :</span><span class="value obstetricsFirstDew"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">胎位 :</span><span class="value obstetricsPlacental"></span></p>
+                    <p><span class="itemTitle">胎心率 :</span><span class="value obstetricsFetalHeart"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">盆骨出口横径 :</span><span class="value obstetricsTransversePelvicDiameter"></span></p>
+                </div>
+            </div>
+            <div class="infoBox">
+                <h3>化验检查</h3>
+                <div class="itemBox">
+                    <p><span class="itemTitle">尿蛋白 :</span><span class="value assayUrineProtein"></span></p>
+                    <p><span class="itemTitle">血红蛋白 :</span><span class="value assayHemoglobin"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">血小板 :</span><span class="value assayBloodPlatelet"></span></p>
+                    <p><span class="itemTitle">血型 :</span><span class="value assayBloodType"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">诊断 :</span><span class="value primaryDiagnosis"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span class="itemTitle">处置 :</span><span class="value disposal"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 患者信息 -->
+    <div class="userInfo">
+        <div class="basisInfo">
+            <p class="name pregnantName">孕妇姓名</p>
+            <p class="tel telephone">孕妇手机号</p>
+            <span class="risk">低风险</span>
+        </div>
+        <div class="disInfo">
+            <p><span>孕 周 :</span><span class="pregnantDay"></span></p>
+            <p><span>预产期 :</span><span class="expectedText"></span></p>
+            <p><span>末次月经 :</span><span class="lastMenstruationText"></span></p>
+        </div>
+    </div>
+    <a class="submitBtn" href="javascript:;">返  回</a>
+    <div class="footer">copyright &copy; 医来医往(北京)科技有限公司</div>
+</body>
+
+</html>

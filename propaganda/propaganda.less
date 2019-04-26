@@ -1,0 +1,103 @@
+@import "../css/reset.css";
+@import "../css/root.less";
+@import "../css/footer.less";
+body {}
+
+header {
+    .box-shadow();
+    .padding-left(40);
+    ul {
+        float: left;
+        .height(100);
+        .line-height(100);
+        li {
+            float: left;
+            .margin-right(70);
+            .font-size(26);
+        }
+    }
+    .seekIcon {
+        float: right;
+        background: url('/maternal-weChat/propaganda/seek.png') no-repeat 0 0;
+        .width(38);
+        .height(39);
+        .background-size(38,
+        39);
+        .margin-right(50);
+        .margin-top(30); // position: absolute;
+    }
+}
+
+main {
+    .margin-top(20);
+    background-color: #f1f1f1;
+    .main_left {
+        height: 100%;
+        .width(200);
+        float: left;
+        ul {
+            .margin-top(30);
+            li {
+                .width(235);
+                float: left;
+                text-align: center;
+                .font-size(32);
+                color: #333333;
+                .padding(30,
+                0,
+                30,
+                0);
+                background-color: #fff;
+                position: relative;
+                &:before {
+                    content: ' ';
+                    position: absolute;
+                    .top(30);
+                    .left(30); // transform: translate(-50%,0);
+                    .width(4);
+                    .height(46);
+                    background: #79cde8;
+                }
+            }
+        }
+    }
+    .main_right {
+        float: right;
+        .padding(25,
+        50,
+        25,
+        45);
+        .width(520);
+        background-color: #fff;
+        border: 1px solid #ebebeb;
+        h3 {
+            .font-size(30);
+            color: #79cde8;
+            .margin-bottom(33);
+        }
+        ul {
+            li {
+                .width(198);
+                .height(65);
+                border: 1px solid #cbcbcb;
+                text-align: center;
+                .line-height(65);
+                float: left;
+                .font-size(32);
+                color: #333333;
+                a {
+                    .width(198);
+                    .height(65);
+                }
+            }
+            li:nth-child(2n-1) {
+                .margin-right(20);
+                .margin-bottom(25);
+                .border-radius(10,
+                10,
+                10,
+                10);
+            }
+        }
+    }
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- 网站标题 google：66个字符也就是33个文字以内 百度：60个字符也就是30个文字以内 -->
+    <title>个人中心</title>
+    <!-- 用户是否可以通过他的手势来缩放整个应用程序 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <!-- 作者 -->
+    <meta name="author" content="">
+    <!-- 描述 google：240个字符即120个文字以内 百度：220个字符即110个文字以内 -->
+    <meta name="description" content="">
+    <!-- 关键字 不超过100个字符50个文字以内 -->
+    <meta name="Keywords" content="">
+    <meta name="full-screen" content="yes" />
+    <!-- 将不识别手机号 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 将不识别邮箱 -->
+    <meta name="format-detection" content="email=no" />
+    <!-- 禁止跳转至地图 -->
+    <meta name="format-detection" content="address=no" />
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <script type="text/javascript">
+        !(function(doc, win) {
+            var docEle = doc.documentElement, //获取html元素
+                event = "onorientationchange" in window ? "orientationchange" : "resize",
+                fn = function() {
+                    var width = docEle.clientWidth;
+                    width && (docEle.style.fontSize = (width / 18.75) + "px");
+                }
+            win.addEventListener(event, fn, false);
+            win.addEventListener("DOMContentLoaded", fn, false);
+            win.addEventListener("resize", fn, false);
+        })(document, window);
+    </script>
+    
+    <link rel="stylesheet" href="/maternal-weChat/plugins/layui/css/layui.css">
+    <link rel="stylesheet/less" type="text/css" href="/maternal-weChat/user/user.less" />
+    <script src="/maternal-weChat/js/jquery.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/plugins/layui/layui.all.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/plugins/echarts/echarts.min.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/less.min.js"></script>
+    <script src="/maternal-weChat/js/aesJson.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/aesUtilJson.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/utils.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/root.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/WeChatAuthorUntil.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/user/user.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <a class="userContent" href="/maternal-weChat/userInfo/userInfo.html">
+        <div class="baseItem">
+            <div class="baseInfo">
+                <p class="name pregnantNameText"></p>
+                <p class="tel telephoneText"></p>
+                <span class="risk">低风险</span>
+            </div>
+            <div class="disInfo">
+                <p><span>孕 周 :</span><span class="pregnantDay"></span></p>
+                <p><span>孕产期 :</span><span class="expectedText"></span></p>
+                <p><span>末次月经 :</span><span class="lastMenstruationText"></span></p>
+            </div>
+        </div>
+        <div class="item">
+            <p><span>孕前体重 :</span><span class="lastWeight"></span></p>
+            <p><span>建档日期 :</span><span class="filingDate"></span></p>
+        </div>
+        <div class="item">
+            <p><span>既往病史 :</span><span class="parturitionDetailNowHistory"></span></p>
+        </div>
+    </a>
+
+    <div class="mainContent">
+        <div class="tabContnet">
+            <a class="active" href="javascript:;">复检记录</a>
+            <!-- <a class="caution" href="javascript:;">复检提醒</a> -->
+            <a href="javascript:;">复检提醒</a>
+            <a href="javascript:;">高危评估</a>
+            <a href="javascript:;">BMI值</a>
+        </div>
+        <div class="content">
+            <div class="item active">
+                <div class="titleBox">
+                    <h2>复检记录</h2>
+                    <a class="recheckBtn" href="javascript:;">查看全部</a>
+                </div>
+                <div class="itemBox">
+                    <p><span>孕   周 :</span><span class="value gestational"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span>复检日期 :</span><span class="value checkDate"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span>血    压 :</span><span class="value bloodPressure"></span></p>
+                    <p><span>体    重 :</span><span class="value bodyWeight"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span>先    露 :</span><span class="value presentation"></span></p>
+                    <p><span>腹    围 :</span><span class="value abdominalGirth"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span>宫    高 :</span><span class="value highPalace"></span></p>
+                    <p><span>衔    接 :</span><span class="value cohesion"></span></p>
+                </div>
+                <div class="itemBox">
+                    <p><span>自觉不适 :</span><span class="value malaise"></span></p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="titleBox">
+                    <h2>复检提醒</h2>
+                    <a href="/maternal-weChat/cautionList/cautionList.html">查看全部</a>
+                </div>
+                <div class="itemBox">
+                    <p><span>本次复检时间 :</span><span class="value makeAppointmentTime"></span></p>
+                </div>
+                <div class="remindBox">
+                    <span>产检须知 :</span>
+                    <div>
+                        <p class="checkDetail"></p>
+                    </div>
+                </div>
+                <div class="remindBox">
+                    <span>温馨提醒 :</span>
+                    <div>
+                        <p class="remarks"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="titleBox">
+                    <h2>高危评估</h2>
+                    <a href="/maternal-weChat/highRiskList/highRiskList.html">查看全部</a>
+                </div>
+                <div class="itemBox">
+                    <p><span>评估时间 :</span><span class="value highRiskDate"></span></p>
+                </div>
+                <div class="moreLineBox">
+                    <h2>高危评估项 :</h2>
+                    <p class="totalNum"></p>
+                </div>
+                <div class="moreLineBox">
+                    <h2>高危因素评估分值及颜色匹配 :</h2>
+                    <p class="details"></p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="titleBox">
+                    <h2>BMI 孕期体重管理曲线图</h2>
+                    <!-- <a href="javascript:;">查看全部</a> -->
+                </div>
+                <div class="adviceText">孕前BMI : 18.5-24.9 Kg/<sup>2</sup> </br>体重正常，建议孕期体重增长目标 : 11.5~16 kg</div>
+                <div class="echartsContent">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+@import "../css/reset.css";
+@import "../css/root.less";
+@import "../css/footer.less";
+body {
+    background: @fff;
+    height:100%;
+    width:100%;
+}
+.mainContent {
+    .padding-top(72);
+    .padding-left(48);
+    .padding-right(48);
+    .titleBox {
+        .title {
+            flex: 1;
+            .line-height(58);
+            .font-size(46);
+            font-weight: bold;
+            letter-spacing:1px;
+            color: @000;
+        }
+        .subTitle {
+            flex: 1;
+            .padding-top(4);
+            .padding-left(2);
+            .font-size(20);
+            .line-height(24);
+            letter-spacing:1px;
+            color: #999999;
+        }
+    }
+    .inputBox {
+        .padding-top(70);
+        .newItem {
+            flex: 1;
+            align-items: center;
+            .height(120);
+            justify-content: space-between;
+            border-bottom: 1px solid #ededed;
+            .titleP {
+                .height(30);
+                .font-size(30);
+                color: @333;
+            }
+            .subP {
+                font-weight: bold;
+                letter-spacing:1px;
+                .padding-top(30);
+                .height(30);
+                .font-size(32);
+                color: @333;
+            }
+        }
+        .item {
+            flex: 1;
+            .padding-top(16);
+            .height(140);
+            align-items: center;
+            justify-content: space-between;
+            letter-spacing:1px;
+            border-bottom: 1px solid #ededed;
+            > p {
+                flex: 1;
+                .font-size(30);
+            }
+            .customP {
+                flex: 1;
+                .font-size(30);
+                color: #FF0000;
+            }
+            > input {
+                .padding-top(16);
+                flex: 1;
+                .font-size(34);
+            }
+        }
+        .subItem {
+            flex: 1;
+            .padding-top(16);
+            .height(140);
+            align-items: center;
+            justify-content: space-between;
+            letter-spacing:1px;
+            // border-bottom: 1px solid #ededed;
+            .leftDiv{
+                float:left;
+                width:60%;
+                > p{
+                    flex: 1;
+                    .font-size(30);
+                }
+                > input {
+                    .padding-top(16);
+                    flex: 1;
+                    .font-size(34);
+                }
+            }
+            .againDiv{
+                .padding-top(16);
+                float:right;
+                width:35%;
+                > p{
+                    flex: 1;
+                    .font-size(28);
+                }
+                .colorP{
+                    color: @qing;
+                }
+            }
+            .rightDiv{
+                .padding-top(28);
+                float:right;
+                width:35%;
+                > p{
+                    flex: 1;
+                    .font-size(32);
+                }
+                .colorP{
+                    color: @qing;
+                }
+            }
+        }
+    }
+}
+.detailContent {
+    border-top: 1px solid #ededed;
+    .padding-left(48);
+    .padding-right(48);
+    // 提交按钮
+    .submitBtn {
+        .margin-top(68);
+        display: block;
+        .height(88);
+        .line-height(80);
+        text-align: center;
+        .font-size(32);
+        color: @fff;
+        border-radius:20px;
+        background: linear-gradient(45deg, #75cae5 , #8fe2fc);
+    }
+    > p {
+            text-align:center;
+            .margin(28,0,0,0);
+            .font-size(28);
+            color: @999;
+            > span {
+                .font-size(28);
+                color: @qing;
+            }
+        }
+}
+

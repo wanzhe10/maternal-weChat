@@ -1,0 +1,95 @@
+@import "../css/reset.css";
+@import "../css/root.less";
+@import "../css/footer.less";
+@import "../css/bigImg.less"; // 查看大图
+
+body {
+    background: @bgColor;
+    .padding(0,20,0,20);
+
+}
+.mainContent {
+    .itemBox {
+        .margin-top(20);
+        .box-shadow();
+        background: @fff;
+        .titleBox {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .line-height(94);
+            .padding(0,30,0,30);
+            background: #f6f6f6;
+            > p {
+                .font-size(32);
+                color: #75cae5;
+                .monthText {
+                    .font-size(36);
+                    .padding(0,30,0,0);
+                }
+                .manyText {
+                    .padding(0,0,0,30);
+                }
+            }
+            > a {
+                .font-size(32);
+                color: #75cae5;
+            }
+        }
+        .contentBox {
+            .padding(0,30,0,30);
+            .topBox {
+                .font-size(32);
+                color: @333;
+                .line-height(82);
+                border-bottom: 1px solid @borderColor;
+                span {
+                    .font-size(32);
+                    color: @666;
+                    .padding(0,40,0,10);
+                }
+            }
+            .centerBox {
+                border-bottom: 1px solid @borderColor;
+                .padding(30,0,30,0);
+                > div {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    .titleText {
+                        .width(170);
+                        .font-size(32);
+                    }
+                    .contentText {
+                        flex: 1;
+                        display: flex;
+                        flex-wrap: wrap;
+                        .font-size(32);
+                        > span {
+                            .height(60);
+                            .margin-right(30);
+                            > i {
+                                font-style: normal;
+                            }
+                        }
+                    }
+                }
+            }
+            .bottomBox {
+                text-align: right;
+                .padding(18,0,18,0);
+                > p {
+                    .line-height(76);
+                    .font-size(32);
+                    color: @333;
+                    > img {
+                        display: inline-block;
+                        .width(140);
+                        .height(76);
+                        border: 1px solid #999;
+                    }
+                }
+            }
+        }
+    }
+}

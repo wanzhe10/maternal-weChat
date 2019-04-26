@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- 网站标题 google：66个字符也就是33个文字以内 百度：60个字符也就是30个文字以内 -->
+    <title>高危评估详情</title>
+    <!-- 用户是否可以通过他的手势来缩放整个应用程序 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <!-- 作者 -->
+    <meta name="author" content="">
+    <!-- 描述 google：240个字符即120个文字以内 百度：220个字符即110个文字以内 -->
+    <meta name="description" content="">
+    <!-- 关键字 不超过100个字符50个文字以内 -->
+    <meta name="Keywords" content="">
+    <meta name="full-screen" content="yes" />
+    <!-- 将不识别手机号 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 将不识别邮箱 -->
+    <meta name="format-detection" content="email=no" />
+    <!-- 禁止跳转至地图 -->
+    <meta name="format-detection" content="address=no" />
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <script type="text/javascript">
+        !(function(doc, win) {
+            var docEle = doc.documentElement, //获取html元素
+                event = "onorientationchange" in window ? "orientationchange" : "resize",
+                fn = function() {
+                    var width = docEle.clientWidth;
+                    width && (docEle.style.fontSize = (width / 18.75) + "px");
+                }
+            win.addEventListener(event, fn, false);
+            win.addEventListener("DOMContentLoaded", fn, false);
+            win.addEventListener("resize", fn, false);
+        })(document, window);
+    </script>
+    <link rel="stylesheet" href="/maternal-weChat/plugins/layui/css/layui.css">
+    <link rel="stylesheet/less" type="text/css" href="/maternal-weChat/highRiskInfo/highRiskInfo.less" />
+    <script src="/maternal-weChat/js/jquery.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/plugins/layui/layui.all.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/less.min.js"></script>
+    <script src="/maternal-weChat/js/utils.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/aesJson.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/aesUtilJson.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/js/root.js" charset="utf-8"></script>
+    <script src="/maternal-weChat/highRiskInfo/highRiskInfo.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div class="navListContent">
+        <div class="navListBox">
+            <div class="titleBox">
+                <h2>高危评估记录</h2>
+                <img class="closeBtn" src="./close.png" alt="">
+            </div>
+            <div class="navList">
+                <!-- <a class="active" href="javascript:;">第1次</a>
+                <a href="javascript:;">第1次</a>
+                <a href="javascript:;">第1次</a> -->
+            </div>
+        </div>
+    </div>
+    <div class="mainContent">
+        <div class="tabContent clearFix">
+            <div class="navBox">
+                <!-- <a class="active" href="javascript:;">第一次</a>
+                <a href="javascript:;">第二次</a>
+                <a href="javascript:;">第三次</a>
+                <a href="javascript:;">第四次</a>
+                <a href="javascript:;">第五次</a> -->
+            </div>
+            <a class="btnBox" href="javascript:;"></a>
+        </div>
+        <div class="dateContent">
+            <p>评估时间 : <span class="createDate"></span>孕 周 : <span class="gestationalWeeks"></span></p>
+            <hr>
+            <p>评估颜色 : <span class="riskBox"></span>评估分数 :<span class="totalPoints"></span></p>
+        </div>
+        <div class="tableContent">
+            <div class="tableItem">
+                <p class="title">绿色</p>
+                <p class="desc green"></p>
+            </div>
+            <div class="tableItem">
+                <p class="title">黄色(一般风险)</p>
+                <p class="desc yellow"></p>
+            </div>
+            <div class="tableItem">
+                <p class="title">橙色(较高风险)</p>
+                <p class="desc orange"></p>
+            </div>
+            <div class="tableItem">
+                <p class="title">红色(高风险)</p>
+                <p class="desc red"></p>
+            </div>
+            <div class="tableItem">
+                <p class="title">紫色(患有传染性疾病)</p>
+                <p class="desc purple"></p>
+            </div>
+        </div>
+        <div class="signatureContent">
+            <div>
+                <p>孕妇签字 :</p>
+                <img class="signatureImg patientsImg" src="" alt="">
+            </div>
+            <div>
+                <p>医生签字 :</p>
+                <img class="signatureImg doctorImg" src="" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- 查看大图 start-->
+    <div class="bigImgContent">
+        <img src="" alt="">
+    </div>
+    <!-- 查看大图 end-->
+    <div class="footer">copyright &copy; 医来医往(北京)科技有限公司</div>
+</body>
+
+</html>
